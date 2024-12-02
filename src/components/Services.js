@@ -22,14 +22,14 @@ const Services = () => {
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                 <FaFacebookF className="text-2xl text-blue-600 hover:text-blue-800" />
               </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/nspackers.mover/profilecard/?igsh=MTNmanpsOTQ1NmU5OA%3D%3D/nspackers.mover/profilecard/?igsh=MTNmanpsOTQ1NmU5OA%3D%3D" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className="text-2xl text-pink-500 hover:text-pink-700" />
               </a>
               <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
                 <FaTwitter className="text-2xl text-blue-400 hover:text-blue-600" />
               </a>
               {/* WhatsApp Icon */}
-              <a href="https://wa.me/yourphone" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/9324454064" target="_blank" rel="noopener noreferrer">
                 <FaWhatsapp className="text-2xl text-green-500 hover:text-green-700" />
               </a>
             </div>
@@ -50,14 +50,14 @@ const Services = () => {
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                 <FaFacebookF className="text-2xl text-blue-600 hover:text-blue-800" />
               </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/nspackers.mover/profilecard/?igsh=MTNmanpsOTQ1NmU5OA%3D%3D" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className="text-2xl text-pink-500 hover:text-pink-700" />
               </a>
               <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
                 <FaTwitter className="text-2xl text-blue-400 hover:text-blue-600" />
               </a>
               {/* WhatsApp Icon */}
-              <a href="https://wa.me/yourphone" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/9324454064" target="_blank" rel="noopener noreferrer">
                 <FaWhatsapp className="text-2xl text-green-500 hover:text-green-700" />
               </a>
             </div>
@@ -78,14 +78,14 @@ const Services = () => {
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                 <FaFacebookF className="text-2xl text-blue-600 hover:text-blue-800" />
               </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/nspackers.mover/profilecard/?igsh=MTNmanpsOTQ1NmU5OA%3D%3D" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className="text-2xl text-pink-500 hover:text-pink-700" />
               </a>
               <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
                 <FaTwitter className="text-2xl text-blue-400 hover:text-blue-600" />
               </a>
               {/* WhatsApp Icon */}
-              <a href="https://wa.me/yourphone" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/9324454064" target="_blank" rel="noopener noreferrer">
                 <FaWhatsapp className="text-2xl text-green-500 hover:text-green-700" />
               </a>
             </div>
@@ -107,14 +107,14 @@ const Services = () => {
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                 <FaFacebookF className="text-2xl text-blue-600 hover:text-blue-800" />
               </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/nspackers.mover/profilecard/?igsh=MTNmanpsOTQ1NmU5OA%3D%3D" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className="text-2xl text-pink-500 hover:text-pink-700" />
               </a>
               <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
                 <FaTwitter className="text-2xl text-blue-400 hover:text-blue-600" />
               </a>
               {/* WhatsApp Icon */}
-              <a href="https://wa.me/yourphone" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/9324454064" target="_blank" rel="noopener noreferrer">
                 <FaWhatsapp className="text-2xl text-green-500 hover:text-green-700" />
               </a>
             </div>
@@ -135,14 +135,14 @@ const Services = () => {
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                 <FaFacebookF className="text-2xl text-blue-600 hover:text-blue-800" />
               </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/nspackers.mover/profilecard/?igsh=MTNmanpsOTQ1NmU5OA%3D%3D" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className="text-2xl text-pink-500 hover:text-pink-700" />
               </a>
               <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
                 <FaTwitter className="text-2xl text-blue-400 hover:text-blue-600" />
               </a>
               {/* WhatsApp Icon */}
-              <a href="https://wa.me/yourphone" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/9324454064" target="_blank" rel="noopener noreferrer">
                 <FaWhatsapp className="text-2xl text-green-500 hover:text-green-700" />
               </a>
             </div>
@@ -163,14 +163,14 @@ const Services = () => {
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                 <FaFacebookF className="text-2xl text-blue-600 hover:text-blue-800" />
               </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/nspackers.mover/profilecard/?igsh=MTNmanpsOTQ1NmU5OA%3D%3D" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className="text-2xl text-pink-500 hover:text-pink-700" />
               </a>
               <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
                 <FaTwitter className="text-2xl text-blue-400 hover:text-blue-600" />
               </a>
               {/* WhatsApp Icon */}
-              <a href="https://wa.me/yourphone" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/9324454064" target="_blank" rel="noopener noreferrer">
                 <FaWhatsapp className="text-2xl text-green-500 hover:text-green-700" />
               </a>
             </div>

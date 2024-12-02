@@ -8,10 +8,10 @@ const Header = () => {
 
   return (
     <header className="bg-blue-600 text-white py-4">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center pl-5 pr-5">
         {/* Logo */}
         <div className="logo "> 
-        <h1 className="text-white text-xl sm:text-2xl lg:text-3xl font-semibold">
+        <h1 className="text-white text-xl sm:p-10 sm:text-2xl lg:text-3xl font-semibold">
     Raju
   </h1> 
          
