@@ -7,13 +7,17 @@ const Header = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <header className="bg-blue-600 text-white py-4">
+    <header className="bg-blue-600 text-white  ">
       <div className="container mx-auto flex justify-between items-center pl-5 pr-5">
         {/* Logo */}
         <div className="logo "> 
-        <h1 className="text-white text-xl sm:p-10 sm:text-2xl lg:text-3xl font-semibold">
-    Raju
-  </h1> 
+        
+        <img 
+              src="/img/logo.png" // Replace with actual image path
+              alt="Moving Services"
+              className="h-12 object-cover rounded-md"
+            />
+ 
          
            </div>
 
