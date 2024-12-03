@@ -6,12 +6,14 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './index.css'; // Import Tailwind CSS styles
+import RelocationForm from './components/RelocationForm';
 
 function App() {
   return (
     <div>
       <Header />
       <Hero />
+      <RelocationForm/>
       <Services />
       <About />
       <Contact />
