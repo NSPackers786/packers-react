@@ -1,8 +1,42 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const About = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MovingCompany",
+    "name": "NS Packers and Movers",
+    "description": "NS Packers and Movers offer professional packing and moving services across India, providing safe, timely, and stress-free relocation solutions.",
+    "url": "YOUR_WEBSITE_URL",
+    "logo": "URL_TO_LOGO_IMAGE",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-XXXXXXXXXX", // Add your contact number here
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": "Hindi, English"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Your Address",
+      "addressLocality": "Your City",
+      "addressRegion": "Your Region",
+      "postalCode": "Your Postal Code",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://www.facebook.com/YourPage",
+      "https://twitter.com/YourPage",
+      "https://www.instagram.com/YourPage"
+    ]
+  };
+
   return (
     <section id="about" className="bg-gray-100 py-20">
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      </Helmet>
+
       <div className="container mx-auto px-4">
         <header>
           <h2 className="text-4xl font-extrabold text-blue-600 mb-6">

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { Helmet } from 'react-helmet';
 const RelocationForm = () => {
   const [city, setCity] = useState('Mumbai');
   const [fromLocality, setFromLocality] = useState('');
@@ -24,13 +24,18 @@ const RelocationForm = () => {
       alert("Please enter a valid WhatsApp number.");
       return;
     }
-    
+
+    if (!city || !fromLocality || !toLocality || !shiftingDate) {
+      alert("Please fill all required fields.");
+      return;
+    }
+
     setShowPopup(true); // Show the popup confirmation
   };
 
   const handlePopupConfirm = () => {
     const message = `Hello! I'm interested in relocating.\n\nDetails:\nCity: ${city}\nFrom Locality: ${fromLocality}\nTo Locality: ${toLocality}\nShifting Date: ${shiftingDate}\nFlexible Date: ${isFlexible ? 'Yes' : 'No'}\nPrice: ₹${price}\n\nPlease provide further details.`;
-    
+
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, '_blank');
     setShowPopup(false); // Close the popup after confirming
@@ -40,7 +45,13 @@ const RelocationForm = () => {
     setShowPopup(false); // Close the popup if the user cancels
   };
 
-  return (
+  return (<><Helmet>
+    <title>Relocation Services - Check Prices</title>
+    <meta name="description" content="Fill out the form to get relocation prices for shifting services in Mumbai, Delhi, Bangalore, and more. Get an instant quote for moving or renting a truck." />
+    <meta name="keywords" content="relocation form, moving services, shifting services, packers and movers, truck rental" />
+    <meta property="og:title" content="Relocation Services - Get Instant Price Quote" />
+    <meta property="og:description" content="Fill out the form to get relocation prices for shifting services in Mumbai, Delhi, Bangalore, and more. Get an instant quote for moving or renting a truck." />
+  </Helmet>
     <div className="bg-white py-8 px-6 md:px-10 rounded-t-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto shadow-lg">
       <div className="sticky top-2 bg-white rounded-md">
         <div className="md:px-6 md:py-4 md:pb-0">
@@ -212,7 +223,7 @@ const RelocationForm = () => {
           </div>
         </div>
       )}
-    </div>
+    </div></>
   );
 };
 
