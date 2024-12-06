@@ -33,7 +33,7 @@ function App() {
               "logo": "https://www.example.com/logo.png",
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+91-XXXXXXXXXX",
+                "telephone": "+91-",
                 "contactType": "Customer Service"
               },
               "sameAs": [
