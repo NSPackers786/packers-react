@@ -35,14 +35,14 @@ const Services = () => {
         <script type="application/ld+json">{JSON.stringify(serviceData)}</script>
       </Helmet>
 
-      <section id='services' className="services py-16 bg-gray-100" aria-labelledby="services-heading">
-        <div className="container mx-auto text-center">
+      <section id='services' className="services py-16  bg-gray-100" aria-labelledby="services-heading">
+        <div className="container mx-auto text-center  ">
           <h2 id="services-heading" className="text-4xl font-extrabold text-blue-600 mb-8">
             Our Services
           </h2>
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 ">
             {/* Packing Services Card */}
-            <div className="service-card p-6 bg-white rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl">
+            <div className="service-card p-2 m-5 bg-white rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl">
               <img 
                 src="/img/paker_photo.png" // Replace with actual image path
                 alt="Packing Services ensuring safety during transit"
@@ -68,7 +68,7 @@ const Services = () => {
             </div>
 
             {/* Moving Services Card */}
-            <div className="service-card p-6 bg-white rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl">
+            <div className="service-card p-2 m-5   bg-white rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl">
               <img 
                 src="/img/box.jpg" // Replace with actual image path
                 alt="Moving Services for your home or office"
@@ -94,7 +94,7 @@ const Services = () => {
             </div>
 
             {/* Storage Services Card */}
-            <div className="service-card p-6 bg-white rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl">
+            <div className="service-card p-2 m-5 bg-white rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl">
               <img 
                 src="/img/packer.jpg" // Replace with actual image path
                 alt="Storage Services for safe and secure storage"

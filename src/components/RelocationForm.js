@@ -82,13 +82,13 @@ const RelocationForm = () => {
             </button>
           </div>
 
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="  grid grid-cols-1 md:grid-cols-2 gap-2">
             <div>
-              <label htmlFor="city" className="font-bold text-sm text-gray-700">Select City</label>
+              <label htmlFor="city" className="font-bold text-sm  text-gray-700">Select City</label>
               <div className="relative text-base">
                 <button
                   type="button"
-                  className="block w-full py-3 px-4 border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className=" w-full  border border-gray-300 bg-white rounded-lg shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   onClick={() => setCityDropdownOpen(!cityDropdownOpen)}
                   aria-label={`Select city, current selection: ${city}`}
                   id="city"

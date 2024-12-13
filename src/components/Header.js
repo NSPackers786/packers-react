@@ -19,15 +19,17 @@ const Header = () => {
       <header className="bg-blue-600 text-white">
         <div className="container mx-auto flex justify-between items-center pl-5 pr-5">
           {/* Logo with accessible alt text */}
-          <div className="logo">
-            <a href="#home">
-              <img 
-                src="/img/logo.png" // Replace with actual image path
-                alt="NS Packers and Movers Logo - Trusted Packing and Moving Services"
-                className="h-12 object-cover rounded-md"
-              />
-            </a>
-          </div>
+          {/* Logo with accessible alt text */}
+<div className="logo">
+  <a href="#home">
+    <img 
+      src="/img/nslogo.png" // Replace with actual image path
+      alt="NS Packers and Movers Logo - Trusted Packing and Moving Services"
+      className="h-[80px] w-[80px] object-cover rounded-md"
+    />
+  </a>
+</div>
+
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex" aria-label="Main Navigation">

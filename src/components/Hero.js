@@ -73,17 +73,14 @@
 // };
 
 // export default Hero;
-
-
-
-import React from 'react';
+import React, { useRef } from 'react';
 import { FaPhoneAlt, FaShareAlt, FaStar, FaEllipsisH } from 'react-icons/fa'; // Import icons for the row
 import { Swiper, SwiperSlide } from 'swiper/react'; // Import Swiper components
 import 'swiper/css'; // Import Swiper styles
 
 const Hero = () => {
+  const swiperRef = useRef(null); // Create a reference for the swiper instance
 
-  
   const handleCall = () => {
     window.location.href = 'tel:93244 54064'; // Opens the phone dialer with a sample number
   };
@@ -105,35 +102,48 @@ const Hero = () => {
 
   // Functionality for "Leave a Review"
   const handleReview = () => {
-    // For example, navigate to a review section or show a modal
     alert('Leave a review functionality');
   };
 
   // Functionality for "More Options"
   const handleMore = () => {
-    // Open a dropdown or show more options
     alert('More options');
   };
 
   return (
     <div className="relative">
-      {/* Swiper Slider with Autoplay */}
+      {/* Swiper Slider with Autoplay and Custom Navigation */}
       <Swiper
-        loop={true} // Infinite loop for the slider
+        spaceBetween={30}
+        centeredSlides={true}
         autoplay={{
-          delay: 3000, // Time interval for auto-slide change (3 seconds)
-          disableOnInteraction: false, // Keeps autoplay running even after user interaction
+          delay: 2500,
+          disableOnInteraction: false,
         }}
-        pagination={{ clickable: true }} // Pagination with clickable bullets
-        navigation={true} // Navigation arrows
+        pagination={{
+          clickable: true,
+        }}
+        navigation={{
+          prevEl: '.swiper-button-prev', // Assigning custom prev button
+          nextEl: '.swiper-button-next', // Assigning custom next button
+        }}
         className="hero-slider"
+        ref={swiperRef} // Attach the swiper reference
       >
         {/* Slide 1 */}
         <SwiperSlide>
-          <div
-            className="relative bg-blue-500 h-[500px] sm:h-[600px]" // Background color for the slide
-          >
-            <div className="absolute inset-0 bg-black opacity-50"></div> {/* Dark overlay */}
+          <div className="relative bg-blue-500 h-[500px] sm:h-[600px]">
+            {/* Background Image with Dark Overlay */}
+            <div className="absolute inset-0">
+              <img 
+                src="img/packer.jpg" 
+                alt="Background image of packing and moving services" 
+                className="h-full w-full object-cover" 
+              />
+              <div className="absolute inset-0 bg-black opacity-50"></div>
+            </div>
+
+            {/* Centered Content */}
             <div className="absolute inset-0 flex items-center justify-center text-center text-white">
               <div className="container px-4 sm:px-0">
                 <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
@@ -156,10 +166,16 @@ const Hero = () => {
 
         {/* Slide 2 */}
         <SwiperSlide>
-          <div
-            className="relative bg-green-500 h-[500px] sm:h-[600px]" // Background color for the slide
-          >
-            <div className="absolute inset-0 bg-black opacity-50"></div> {/* Dark overlay */}
+          <div className="relative bg-green-500 h-[500px] sm:h-[600px]">
+            {/* Background Image */}
+            <img 
+              src="img/deliver.jpg" 
+              alt="Packing services in action" 
+              className="absolute inset-0 h-full w-full object-cover" 
+            />
+            {/* Dark Overlay */}
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+            {/* Content */}
             <div className="absolute inset-0 flex items-center justify-center text-center text-white">
               <div className="container px-4 sm:px-0">
                 <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
@@ -171,7 +187,7 @@ const Hero = () => {
                 <a
                   href="#services"
                   className="inline-block px-8 py-3 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400 transition duration-300"
-                  aria-label="Explore our services"
+                  aria-label="Explore trusted services"
                 >
                   Get Started
                 </a>
@@ -182,10 +198,16 @@ const Hero = () => {
 
         {/* Slide 3 */}
         <SwiperSlide>
-          <div
-            className="relative bg-red-500 h-[500px] sm:h-[600px]" // Background color for the slide
-          >
-            <div className="absolute inset-0 bg-black opacity-50"></div> {/* Dark overlay */}
+          <div className="relative bg-red-500 h-[500px] sm:h-[600px]">
+            {/* Background Image */}
+            <img 
+              src="img/paker_photo.png" 
+              alt="Reliable moving service" 
+              className="absolute inset-0 h-full w-full object-cover" 
+            />
+            {/* Dark Overlay */}
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+            {/* Content */}
             <div className="absolute inset-0 flex items-center justify-center text-center text-white">
               <div className="container px-4 sm:px-0">
                 <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
@@ -197,7 +219,7 @@ const Hero = () => {
                 <a
                   href="#services"
                   className="inline-block px-8 py-3 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400 transition duration-300"
-                  aria-label="Explore our services"
+                  aria-label="Explore reliable services"
                 >
                   Get Started
                 </a>
@@ -207,12 +229,20 @@ const Hero = () => {
         </SwiperSlide>
       </Swiper>
 
+      {/* Custom Navigation Arrows */}
+      <div className="swiper-button-prev absolute top-1/2 left-4 text-white bg-opacity-50 p-3 rounded-full cursor-pointer">
+        &lt;
+      </div>
+      <div className="swiper-button-next absolute top-1/2 right-4 text-white bg-opacity-50 p-3 rounded-full cursor-pointer">
+        &gt;
+      </div>
+
       {/* Icon Row */}
       <div className="flex justify-center gap-12 mt-8">
         {/* Call Icon */}
         <div
           className="flex flex-col items-center cursor-pointer"
-          onClick={handleCall} // Trigger phone call
+          onClick={handleCall}
         >
           <FaPhoneAlt
             className="text-4xl text-blue-500 mb-2 hover:text-blue-600 transition duration-300"
@@ -224,7 +254,7 @@ const Hero = () => {
         {/* Share Icon */}
         <div
           className="flex flex-col items-center cursor-pointer"
-          onClick={handleShare} // Trigger share
+          onClick={handleShare}
         >
           <FaShareAlt
             className="text-4xl text-green-500 mb-2 hover:text-green-600 transition duration-300"
@@ -236,7 +266,7 @@ const Hero = () => {
         {/* Review Icon */}
         <div
           className="flex flex-col items-center cursor-pointer"
-          onClick={handleReview} // Trigger review functionality
+          onClick={handleReview}
         >
           <FaStar
             className="text-4xl text-yellow-500 mb-2 hover:text-yellow-600 transition duration-300"
@@ -248,7 +278,7 @@ const Hero = () => {
         {/* More Options Icon */}
         <div
           className="flex flex-col items-center cursor-pointer"
-          onClick={handleMore} // Trigger more options
+          onClick={handleMore}
         >
           <FaEllipsisH
             className="text-4xl text-purple-500 mb-2 hover:text-purple-600 transition duration-300"
