@@ -12,7 +12,7 @@ const Services = () => {
       "name": "NS Packers and Movers",
       "url": "https://www.nspackersandmovers.com",
       "logo": "/img/logo.png",
-      "sameAs": ["https://www.facebook.com/nspackers", "https://www.instagram.com/nspackers"]
+      "sameAs": ["https://www.facebook.com/Packers.movers?mibextid=ZbWKwL/nspackers", "https://www.instagram.com/nspackers"]
     },
     "areaServed": "India",
     "description": "We offer reliable packing, moving, and storage services for your relocation needs.",
@@ -52,13 +52,13 @@ const Services = () => {
               <p className="mt-4 text-gray-700">We handle all types of packing to ensure your items are safe during transit.</p>
               {/* Social Media Icons */}
               <div className="mt-4 flex justify-center space-x-4">
-                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/Packers.movers?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">
                   <FaFacebookF className="text-2xl text-blue-600 hover:text-blue-800" />
                 </a>
                 <a href="https://www.instagram.com/nspackers.mover" target="_blank" rel="noopener noreferrer">
                   <FaInstagram className="text-2xl text-pink-500 hover:text-pink-700" />
                 </a>
-                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://x.com/SPackers595981?t=7DunoK98o7qBYOTLWGtF0A&s=08" target="_blank" rel="noopener noreferrer">
                   <FaTwitter className="text-2xl text-blue-400 hover:text-blue-600" />
                 </a>
                 <a href="https://wa.me/9324454064" target="_blank" rel="noopener noreferrer">
@@ -78,13 +78,13 @@ const Services = () => {
               <p className="mt-4 text-gray-700">From small apartments to large homes, we move your belongings with care.</p>
               {/* Social Media Icons */}
               <div className="mt-4 flex justify-center space-x-4">
-                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/Packers.movers?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">
                   <FaFacebookF className="text-2xl text-blue-600 hover:text-blue-800" />
                 </a>
                 <a href="https://www.instagram.com/nspackers.mover" target="_blank" rel="noopener noreferrer">
                   <FaInstagram className="text-2xl text-pink-500 hover:text-pink-700" />
                 </a>
-                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://x.com/SPackers595981?t=7DunoK98o7qBYOTLWGtF0A&s=08" target="_blank" rel="noopener noreferrer">
                   <FaTwitter className="text-2xl text-blue-400 hover:text-blue-600" />
                 </a>
                 <a href="https://wa.me/9324454064" target="_blank" rel="noopener noreferrer">
@@ -104,13 +104,13 @@ const Services = () => {
               <p className="mt-4 text-gray-700">We provide secure storage for your belongings, available for short or long-term needs.</p>
               {/* Social Media Icons */}
               <div className="mt-4 flex justify-center space-x-4">
-                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/Packers.movers?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">
                   <FaFacebookF className="text-2xl text-blue-600 hover:text-blue-800" />
                 </a>
                 <a href="https://www.instagram.com/nspackers.mover" target="_blank" rel="noopener noreferrer">
                   <FaInstagram className="text-2xl text-pink-500 hover:text-pink-700" />
                 </a>
-                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://x.com/SPackers595981?t=7DunoK98o7qBYOTLWGtF0A&s=08" target="_blank" rel="noopener noreferrer">
                   <FaTwitter className="text-2xl text-blue-400 hover:text-blue-600" />
                 </a>
                 <a href="https://wa.me/9324454064" target="_blank" rel="noopener noreferrer">

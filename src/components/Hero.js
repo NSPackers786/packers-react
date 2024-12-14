@@ -74,7 +74,7 @@
 
 // export default Hero;
 import React, { useState, useRef } from 'react';
-import { FaPhoneAlt, FaShareAlt, FaStar, FaEllipsisH } from 'react-icons/fa';
+import { FaPhoneAlt, FaShareAlt, FaStar, FaWhatsapp} from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
@@ -222,7 +222,16 @@ const Hero = () => {
         </div>
 
         {/* More Options Icon */}
-         
+        <div
+          className="flex flex-col items-center cursor-pointer"
+           
+        ><a href="https://wa.me/9324454064" target="_blank" rel="noopener noreferrer">
+          <FaWhatsapp
+            className="text-4xl text-green-500 mb-2 hover:text-green-600 transition duration-300"
+            aria-label="More options"
+          />
+           </a>
+        </div>
       </div>
 
       {/* Review Modal */}
