@@ -20,13 +20,17 @@ const Header = () => {
         <div className="container mx-auto flex justify-between items-center pl-5 pr-5">
           {/* Logo with accessible alt text */}
           {/* Logo with accessible alt text */}
-<div className="logo">
-  <a href="#home">
+          <div className="logo flex items-center gap-4">
+  <a href="#home" className="flex items-center">
     <img 
-      src="/img/nslogo.png" // Replace with actual image path
-      alt="NS Packers and Movers Logo - Trusted Packing and Moving Services"
+      src="/img/nslogo.png" // Replace with the actual image path
+      alt="NS Packers and Movers Logo"
       className="h-[80px] w-[80px] object-cover rounded-md"
     />
+    <span className="text-xl font-roboto font-bold italic text-white">
+  NSpackers
+</span>
+
   </a>
 </div>
 

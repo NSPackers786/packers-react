@@ -73,46 +73,63 @@
 // };
 
 // export default Hero;
-import React, { useRef } from 'react';
-import { FaPhoneAlt, FaShareAlt, FaStar, FaEllipsisH } from 'react-icons/fa'; // Import icons for the row
-import { Swiper, SwiperSlide } from 'swiper/react'; // Import Swiper components
-import 'swiper/css'; // Import Swiper styles
+import React, { useState, useRef } from 'react';
+import { FaPhoneAlt, FaShareAlt, FaStar, FaEllipsisH } from 'react-icons/fa';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const Hero = () => {
-  const swiperRef = useRef(null); // Create a reference for the swiper instance
+  const swiperRef = useRef(null); // Reference for Swiper instance
+  const [isReviewModalOpen, setReviewModalOpen] = useState(false); // State for the Review Modal
 
+  // Functionality for "Call"
   const handleCall = () => {
-    window.location.href = 'tel:93244 54064'; // Opens the phone dialer with a sample number
+    window.location.href = 'tel:9324454064'; // Opens the phone dialer with a sample number
   };
 
   // Functionality for "Share"
   const handleShare = () => {
     if (navigator.share) {
-      navigator.share({
-        title: 'NS Packers and Movers',
-        text: 'Reliable packing and moving services.',
-        url: window.location.href,
-      })
-      .then(() => console.log('Thanks for sharing!'))
-      .catch((error) => console.log('Error sharing', error));
+      navigator
+        .share({
+          title: 'NS Packers and Movers',
+          text: 'Reliable packing and moving services.',
+          url: window.location.href,
+        })
+        .then(() => console.log('Thanks for sharing!'))
+        .catch((error) => console.log('Error sharing', error));
     } else {
       alert('Share functionality is not supported on this device.');
     }
   };
 
-  // Functionality for "Leave a Review"
-  const handleReview = () => {
-    alert('Leave a review functionality');
-  };
-
   // Functionality for "More Options"
   const handleMore = () => {
-    alert('More options');
+    alert('More options coming soon.');
   };
+
+  // Swiper Slides
+  const slides = [
+    {
+      title: 'Welcome to NS Packers and Movers',
+      description: 'We provide reliable packing and moving services across India with care and precision.',
+      image: 'img/packer.jpg',
+    },
+    {
+      title: 'Trusted Packers and Movers',
+      description: 'Safe and efficient moving services tailored to your needs.',
+      image: 'img/deliver.jpg',
+    },
+    {
+      title: 'The Most Reliable Moving Service',
+      description: 'Moving your life with care and efficiency.',
+      image: 'img/paker_photo.png',
+    },
+  ];
 
   return (
     <div className="relative">
-      {/* Swiper Slider with Autoplay and Custom Navigation */}
+      {/* Swiper Slider with Autoplay */}
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -124,109 +141,38 @@ const Hero = () => {
           clickable: true,
         }}
         navigation={{
-          prevEl: '.swiper-button-prev', // Assigning custom prev button
-          nextEl: '.swiper-button-next', // Assigning custom next button
+          prevEl: '.swiper-button-prev',
+          nextEl: '.swiper-button-next',
         }}
         className="hero-slider"
-        ref={swiperRef} // Attach the swiper reference
+        ref={swiperRef}
       >
-        {/* Slide 1 */}
-        <SwiperSlide>
-          <div className="relative bg-blue-500 h-[500px] sm:h-[600px]">
-            {/* Background Image with Dark Overlay */}
-            <div className="absolute inset-0">
-              <img 
-                src="img/packer.jpg" 
-                alt="Background image of packing and moving services" 
-                className="h-full w-full object-cover" 
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <div className="relative h-[500px] sm:h-[600px]">
+              <img
+                src={slide.image}
+                alt={`Slide ${index + 1}`}
+                className="absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-black opacity-50"></div>
-            </div>
-
-            {/* Centered Content */}
-            <div className="absolute inset-0 flex items-center justify-center text-center text-white">
-              <div className="container px-4 sm:px-0">
+              <div className="absolute inset-0 flex items-center justify-center text-center text-white">
+                <div className="container px-4 sm:px-0">
                 <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
                   Welcome to <strong className="text-yellow-400">NS Packers and Movers</strong>
                 </h2>
-                <p className="text-lg sm:text-xl mb-8">
-                  We provide reliable packing and moving services across India with care and precision.
-                </p>
-                <a
-                  href="#services"
-                  className="inline-block px-8 py-3 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400 transition duration-300"
-                  aria-label="Explore our services"
-                >
-                  Get Started
-                </a>
+                  <p className="text-lg sm:text-xl mb-8">{slide.description}</p>
+                  <a
+                    href="#services"
+                    className="inline-block px-8 py-3 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400 transition duration-300"
+                  >
+                    Get Started
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        </SwiperSlide>
-
-        {/* Slide 2 */}
-        <SwiperSlide>
-          <div className="relative bg-green-500 h-[500px] sm:h-[600px]">
-            {/* Background Image */}
-            <img 
-              src="img/deliver.jpg" 
-              alt="Packing services in action" 
-              className="absolute inset-0 h-full w-full object-cover" 
-            />
-            {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black opacity-50"></div>
-            {/* Content */}
-            <div className="absolute inset-0 flex items-center justify-center text-center text-white">
-              <div className="container px-4 sm:px-0">
-                <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
-                  Trusted <strong className="text-yellow-400">Packers and Movers</strong>
-                </h2>
-                <p className="text-lg sm:text-xl mb-8">
-                  Safe and efficient moving services tailored to your needs.
-                </p>
-                <a
-                  href="#services"
-                  className="inline-block px-8 py-3 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400 transition duration-300"
-                  aria-label="Explore trusted services"
-                >
-                  Get Started
-                </a>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-
-        {/* Slide 3 */}
-        <SwiperSlide>
-          <div className="relative bg-red-500 h-[500px] sm:h-[600px]">
-            {/* Background Image */}
-            <img 
-              src="img/paker_photo.png" 
-              alt="Reliable moving service" 
-              className="absolute inset-0 h-full w-full object-cover" 
-            />
-            {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black opacity-50"></div>
-            {/* Content */}
-            <div className="absolute inset-0 flex items-center justify-center text-center text-white">
-              <div className="container px-4 sm:px-0">
-                <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
-                  The Most <strong className="text-yellow-400">Reliable Moving Service</strong>
-                </h2>
-                <p className="text-lg sm:text-xl mb-8">
-                  Moving your life with care and efficiency.
-                </p>
-                <a
-                  href="#services"
-                  className="inline-block px-8 py-3 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400 transition duration-300"
-                  aria-label="Explore reliable services"
-                >
-                  Get Started
-                </a>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
+          </SwiperSlide>
+        ))}
       </Swiper>
 
       {/* Custom Navigation Arrows */}
@@ -266,7 +212,7 @@ const Hero = () => {
         {/* Review Icon */}
         <div
           className="flex flex-col items-center cursor-pointer"
-          onClick={handleReview}
+          onClick={() => setReviewModalOpen(true)}
         >
           <FaStar
             className="text-4xl text-yellow-500 mb-2 hover:text-yellow-600 transition duration-300"
@@ -276,17 +222,39 @@ const Hero = () => {
         </div>
 
         {/* More Options Icon */}
-        <div
-          className="flex flex-col items-center cursor-pointer"
-          onClick={handleMore}
-        >
-          <FaEllipsisH
-            className="text-4xl text-purple-500 mb-2 hover:text-purple-600 transition duration-300"
-            aria-label="More options"
-          />
-          <span className="text-sm text-white">More</span>
-        </div>
+         
       </div>
+
+      {/* Review Modal */}
+      {isReviewModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-8 w-[90%] max-w-md">
+            <h2 className="text-xl font-bold mb-4">Leave a Review</h2>
+            <textarea
+              className="w-full p-2 border border-gray-300 rounded-lg"
+              rows="4"
+              placeholder="Write your review here..."
+            />
+            <div className="flex justify-end mt-4">
+              <button
+                onClick={() => setReviewModalOpen(false)}
+                className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg mr-2"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => {
+                  setReviewModalOpen(false);
+                  alert('Thank you for your review!');
+                }}
+                className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
