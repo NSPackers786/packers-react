@@ -11,7 +11,7 @@ const Services = () => {
       "@type": "Organization",
       "name": "NS Packers and Movers",
       "url": "https://www.nspackersandmovers.com",
-      "logo": "/img/logo.png",
+      "logo": "/img/nslogo.png",
       "sameAs": ["https://www.facebook.com/Packers.movers?mibextid=ZbWKwL/nspackers", "https://www.instagram.com/nspackers"]
     },
     "areaServed": "India",

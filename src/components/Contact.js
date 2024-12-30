@@ -1,7 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 
 const Contact = () => {
+  // State hooks to store form data
+  const [formName, setFormName] = useState('');
+  const [formEmail, setFormEmail] = useState('');
+  const [formMessage, setFormMessage] = useState('');
+  const [status, setStatus] = useState('');
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = {
+      name: formName,
+      email: formEmail,
+      message: formMessage,
+    };
+
+    try {
+      const response = await fetch('http://localhost:5000/submit-contact-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setStatus('Message sent successfully!');
+      } else {
+        setStatus('Failed to send message: ' + result.error);
+      }
+    } catch (error) {
+      setStatus('Error: ' + error.message);
+    }
+  };
+
   return (
     <section id="contact" className="contact py-16 bg-gradient-to-r from-blue-900 to-blue-600 text-white">
       {/* SEO Meta Tags */}
@@ -26,8 +60,7 @@ const Contact = () => {
 
         {/* Contact Form */}
         <form
-          action="/submit-contact-form"  // Replace this with your actual form handler
-          method="POST"
+          onSubmit={handleSubmit} // Attach the handleSubmit function here
           className="mx-auto w-full max-w-2xl bg-white p-8 rounded-xl shadow-lg"
           aria-labelledby="contact-form-header"
         >
@@ -40,10 +73,9 @@ const Contact = () => {
             placeholder="Your Name"
             className="w-full p-4 mb-4 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50 transition duration-300"
             required
-            aria-required="true"
-            aria-describedby="name-description"
+            value={formName}
+            onChange={(e) => setFormName(e.target.value)} // Update state
           />
-          <span id="name-description" className="sr-only">Enter your full name.</span>
 
           {/* Email Input */}
           <label htmlFor="email" className="sr-only">Your Email</label>
@@ -54,10 +86,9 @@ const Contact = () => {
             placeholder="Your Email"
             className="w-full p-4 mb-4 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50 transition duration-300"
             required
-            aria-required="true"
-            aria-describedby="email-description"
+            value={formEmail}
+            onChange={(e) => setFormEmail(e.target.value)} // Update state
           />
-          <span id="email-description" className="sr-only">Enter your email address.</span>
 
           {/* Message Textarea */}
           <label htmlFor="message" className="sr-only">Your Message</label>
@@ -67,20 +98,21 @@ const Contact = () => {
             placeholder="Your Message"
             className="w-full p-4 mb-6 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50 transition duration-300"
             required
-            aria-required="true"
-            aria-describedby="message-description"
+            value={formMessage}
+            onChange={(e) => setFormMessage(e.target.value)} // Update state
           />
-          <span id="message-description" className="sr-only">Write your message here.</span>
 
           {/* Submit Button */}
           <button
             type="submit"
             className="w-full sm:w-auto px-8 py-3 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-105"
-            aria-label="Send your message"
           >
             Send Message
           </button>
         </form>
+
+        {/* Status Message */}
+        {status && <p className="mt-4 text-lg">{status}</p>}
       </div>
     </section>
   );

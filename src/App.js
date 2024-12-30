@@ -30,7 +30,7 @@ function App() {
               "@type": "Organization",
               "name": "NS Packers and Movers",
               "url": "https://www.example.com",
-              "logo": "https://www.example.com/logo.png",
+              "logo": "/img/nslogo.png",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+91-",

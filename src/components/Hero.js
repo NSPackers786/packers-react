@@ -70,13 +70,12 @@
 //       </section>
 //     </>
 //   );
-// };
-
-// export default Hero;
-import React, { useState, useRef } from 'react';
-import { FaPhoneAlt, FaShareAlt, FaStar, FaWhatsapp} from 'react-icons/fa';
+// };import React, { useState, useRef } from 'react';
+import { FaPhoneAlt, FaShareAlt, FaStar, FaWhatsapp, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useState,useRef } from 'react';
 import 'swiper/css';
+import 'swiper/css/navigation';
 
 const Hero = () => {
   const swiperRef = useRef(null); // Reference for Swiper instance
@@ -103,12 +102,6 @@ const Hero = () => {
     }
   };
 
-  // Functionality for "More Options"
-  const handleMore = () => {
-    alert('More options coming soon.');
-  };
-
-  // Swiper Slides
   const slides = [
     {
       title: 'Welcome to NS Packers and Movers',
@@ -140,12 +133,8 @@ const Hero = () => {
         pagination={{
           clickable: true,
         }}
-        navigation={{
-          prevEl: '.swiper-button-prev',
-          nextEl: '.swiper-button-next',
-        }}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
         className="hero-slider"
-        ref={swiperRef}
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -158,9 +147,9 @@ const Hero = () => {
               <div className="absolute inset-0 bg-black opacity-50"></div>
               <div className="absolute inset-0 flex items-center justify-center text-center text-white">
                 <div className="container px-4 sm:px-0">
-                <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
-                  Welcome to <strong className="text-yellow-400">NS Packers and Movers</strong>
-                </h2>
+                  <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
+                    Welcome to <strong className="text-yellow-400">NS Packers and Movers</strong>
+                  </h2>
                   <p className="text-lg sm:text-xl mb-8">{slide.description}</p>
                   <a
                     href="#services"
@@ -175,21 +164,24 @@ const Hero = () => {
         ))}
       </Swiper>
 
-      {/* Custom Navigation Arrows */}
-      <div className="swiper-button-prev absolute top-1/2 left-4 text-white bg-opacity-50 p-3 rounded-full cursor-pointer">
-        &lt;
-      </div>
-      <div className="swiper-button-next absolute top-1/2 right-4 text-white bg-opacity-50 p-3 rounded-full cursor-pointer">
-        &gt;
-      </div>
+      {/* Custom Navigation Buttons */}
+      <button
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-3 rounded-full z-10 hover:bg-opacity-75 transition duration-300"
+        onClick={() => swiperRef.current.slidePrev()}
+      >
+        <FaArrowLeft size={24} />
+      </button>
+      <button
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-3 rounded-full z-10 hover:bg-opacity-75 transition duration-300"
+        onClick={() => swiperRef.current.slideNext()}
+      >
+        <FaArrowRight size={24} />
+      </button>
 
       {/* Icon Row */}
       <div className="flex justify-center gap-12 mt-8">
         {/* Call Icon */}
-        <div
-          className="flex flex-col items-center cursor-pointer"
-          onClick={handleCall}
-        >
+        <div className="flex flex-col items-center cursor-pointer" onClick={handleCall}>
           <FaPhoneAlt
             className="text-4xl text-blue-500 mb-2 hover:text-blue-600 transition duration-300"
             aria-label="Call us for more details"
@@ -198,10 +190,7 @@ const Hero = () => {
         </div>
 
         {/* Share Icon */}
-        <div
-          className="flex flex-col items-center cursor-pointer"
-          onClick={handleShare}
-        >
+        <div className="flex flex-col items-center cursor-pointer" onClick={handleShare}>
           <FaShareAlt
             className="text-4xl text-green-500 mb-2 hover:text-green-600 transition duration-300"
             aria-label="Share our services"
@@ -210,10 +199,7 @@ const Hero = () => {
         </div>
 
         {/* Review Icon */}
-        <div
-          className="flex flex-col items-center cursor-pointer"
-          onClick={() => setReviewModalOpen(true)}
-        >
+        <div className="flex flex-col items-center cursor-pointer" onClick={() => setReviewModalOpen(true)}>
           <FaStar
             className="text-4xl text-yellow-500 mb-2 hover:text-yellow-600 transition duration-300"
             aria-label="Leave a review"
@@ -221,16 +207,14 @@ const Hero = () => {
           <span className="text-sm text-white">Review</span>
         </div>
 
-        {/* More Options Icon */}
-        <div
-          className="flex flex-col items-center cursor-pointer"
-           
-        ><a href="https://wa.me/9324454064" target="_blank" rel="noopener noreferrer">
-          <FaWhatsapp
-            className="text-4xl text-green-500 mb-2 hover:text-green-600 transition duration-300"
-            aria-label="More options"
-          />
-           </a>
+        {/* WhatsApp Icon */}
+        <div className="flex flex-col items-center cursor-pointer">
+          <a href="https://wa.me/9324454064" target="_blank" rel="noopener noreferrer">
+            <FaWhatsapp
+              className="text-4xl text-green-500 mb-2 hover:text-green-600 transition duration-300"
+              aria-label="Chat with us on WhatsApp"
+            />
+          </a>
         </div>
       </div>
 
