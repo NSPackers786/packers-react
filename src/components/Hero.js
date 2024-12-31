@@ -166,13 +166,13 @@ const Hero = () => {
 
       {/* Custom Navigation Buttons */}
       <button
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-3 rounded-full z-10 hover:bg-opacity-75 transition duration-300"
+        className="absolute top-1/3 left-4 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-3 rounded-full z-10 hover:bg-opacity-75 transition duration-300"
         onClick={() => swiperRef.current.slidePrev()}
       >
         <FaArrowLeft size={24} />
       </button>
       <button
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-3 rounded-full z-10 hover:bg-opacity-75 transition duration-300"
+        className="absolute top-1/3 right-4 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-3 rounded-full z-10 hover:bg-opacity-75 transition duration-300"
         onClick={() => swiperRef.current.slideNext()}
       >
         <FaArrowRight size={24} />
